@@ -31,12 +31,12 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   aliases = var.site_urls
 
   default_cache_behavior {
-    cache_policy_id = data.aws_cloudfront_cache_policy.cache_optimized.id
+    cache_policy_id  = data.aws_cloudfront_cache_policy.cache_optimized.id
     target_origin_id = aws_s3_bucket_website_configuration.redirect_to_instagram.website_endpoint
 
-    allowed_methods  = ["GET", "HEAD"]
-    cached_methods   = ["GET", "HEAD"]
-    compress         = true
+    allowed_methods = ["GET", "HEAD"]
+    cached_methods  = ["GET", "HEAD"]
+    compress        = true
 
     viewer_protocol_policy = "redirect-to-https"
   }
