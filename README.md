@@ -7,11 +7,12 @@
 
 1. Create a file called `backend.tfvars` and fill it with this content:
 
+    ```
     bucket  = "<bucket-name>"
     key     = "<tf-state-filename"
     region  = "<region>"
     encrypt = true
-
+    ```
 
 2. Run `terraform init -backend-config=backend.tfvars`
 
